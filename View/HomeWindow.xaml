@@ -1,0 +1,99 @@
+﻿<Window x:Class="Task5._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Task5._1"
+        
+
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Height="500" Width="800">
+    <!--MouseDown="Grid_MouseDown"-закрыть по двойному клику-->
+    <Grid MouseDown="Grid_MouseDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="370" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="/Img/01.jpg"
+               Grid.Column="0"
+               Stretch="UniformToFill"/>
+        <!-- #497bac #89b9e1 #28353b  -->
+        <Border Grid.Column="1"
+                CornerRadius="0 20 20 0"
+                Background="#89b9e1">
+            <Grid>
+                <Border 
+                    Height="350" Width="300"
+                    Background="#356696"
+                    CornerRadius="20 20 20 20">
+                    <Grid>
+                        <TextBlock x:Name="Input"
+                        HorizontalAlignment="Center"       
+                        Text="Вход в систему" 
+                        Margin="48,15,43,294"
+                        Style="{StaticResource Zag}" />
+                        <Border x:Name="Box"
+                             Style="{StaticResource Bord}" 
+                             HorizontalAlignment="Center" 
+                             Margin="0,125,0,200" >
+                            <TextBox x:Name="Intxt2"
+                                     Text="Введите почту"
+                                     Style="{StaticResource txt}" 
+                                     Foreground="#5988C2F7"/>
+                        </Border>
+                        <Border x:Name="Box2"
+                             Style="{StaticResource Bord}" 
+                             HorizontalAlignment="Center" 
+                             Margin="0,204,0,121" 
+                             Background="#4C28353B" 
+                                >
+                            <TextBox x:Name="Intxt"
+                                     Text="Введите пароль"
+                                     Style="{StaticResource txt}" 
+                                     Foreground="#5988C2F7"
+                                     
+                                     
+                                />
+
+                        </Border>
+                        <TextBlock x:Name="Txt"       
+                                   Text="E-mail" 
+                                   Margin="56,89,178,233"
+                                   Style="{StaticResource Zag}" 
+                                   FontSize="20" 
+                            />
+                        <TextBlock x:Name="Txt2"       
+                                   Text="Password" 
+                                   Margin="56,173,151,149"
+                                   Style="{StaticResource Zag}" 
+                                   FontSize="20" 
+                            />
+                        <Button x:Name="But"
+                                Click="But_Click"
+                                Height="40" Width="150" 
+                                Margin="74,250,74,50"
+                                Background="#9928353B" 
+                                BorderBrush="Transparent"
+                                >
+                            <TextBlock x:Name="Input2"
+                                       HorizontalAlignment="Left"       
+                                       Text="Войти"
+                                       Foreground="#88c2f7"   
+                                       FontSize="22" />
+                        </Button>
+                    </Grid>
+                </Border>
+
+
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>
