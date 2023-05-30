@@ -27,21 +27,18 @@ namespace Task5._1
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (e.ClickCount==2)
             {
-                DragMove();
+                Application.Current.Shutdown();
             }
         }
 
         private void But_Click(object sender, RoutedEventArgs e)
         {
-
+            new View.Window1().Show();
+            Close();
         }
 
-        private void Intxt_MouseDown(object sender, MouseEventArgs e)
-        {
-            Intxt.Clear();
-        }
-
+      
     }
 }

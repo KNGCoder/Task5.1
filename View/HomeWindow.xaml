@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Task5._1"
-        
-
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -43,9 +41,9 @@
                              HorizontalAlignment="Center" 
                              Margin="0,125,0,200" >
                             <TextBox x:Name="Intxt2"
-                                     Text="Введите почту"
-                                     Style="{StaticResource txt}" 
-                                     Foreground="#5988C2F7"/>
+                                     Style="{StaticResource txt}"
+                                     materialDesign:TextFieldAssist.HasClearButton="True"
+                                     materialDesign:TextFieldAssist.UnderlineBrush="#f4f4f4"/>
                         </Border>
                         <Border x:Name="Box2"
                              Style="{StaticResource Bord}" 
@@ -54,12 +52,9 @@
                              Background="#4C28353B" 
                                 >
                             <TextBox x:Name="Intxt"
-                                     Text="Введите пароль"
                                      Style="{StaticResource txt}" 
-                                     Foreground="#5988C2F7"
-                                     
-                                     
-                                />
+                                      materialDesign:TextFieldAssist.HasClearButton="True"
+                                     materialDesign:TextFieldAssist.UnderlineBrush="#f4f4f4" />
 
                         </Border>
                         <TextBlock x:Name="Txt"       

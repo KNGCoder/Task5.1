@@ -3,10 +3,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Task5._1.View"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
+        Title="Window1" Height="500" Width="800">
+    <Grid Background="#89b9e1">
+        <ListView x:Name="LVinfo"
+                  Margin="5 20"
+                  Height="255"
+                  VerticalAlignment="Top">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Очистить"
+                              Click="MenuItem_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID"
+                                    Width="Auto"
+                                    DisplayMemberBinding="{Binding UserID}"/>
+                    <GridViewColumn Header="ЛОГИН"
+                                    Width="Auto"
+                                    DisplayMemberBinding="{Binding Login}"/>
+                    <GridViewColumn Header="ПАРОЛЬ"
+                                    Width="Auto"
+                                    DisplayMemberBinding="{Binding Password}"/>
+                    <GridViewColumn Header="ЭЛ. ПОЧТА"
+                                    Width="Auto"
+                                    DisplayMemberBinding="{Binding Email}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+                  
+        
+        
         
     </Grid>
 </Window>
