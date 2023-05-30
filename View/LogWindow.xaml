@@ -15,7 +15,7 @@
     <Grid Background="#89b9e1">
         <ListView x:Name="LVinfo"
                   Margin="5 20"
-                  Height="255"
+                  Height="205"
                   VerticalAlignment="Top">
             <ListView.ContextMenu>
                 <ContextMenu>
@@ -40,9 +40,139 @@
                 </GridView>
             </ListView.View>
         </ListView>
-                  
-        
-        
-        
+
+        <CheckBox x:Name="CbEnable"
+                  Background="#356696"
+                  Content="Редактировать"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Cursor="Hand"
+                  Margin="10 200 0 0"/>
+
+        <Grid Name="GridEdit"
+              Margin="3,280,0,0"
+              VerticalAlignment="Top"
+              IsEnabled="{Binding ElementName=CbEnable, Path=IsChecked}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="1*"/>
+                
+            </Grid.ColumnDefinitions>
+            <Label Content="ЛОГИН " 
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   Margin="3 0 0 0"
+                   VerticalAlignment="Top"/>
+            <Label Content=" ПАРОЛЬ " 
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   Margin="3,0,0,0"
+                   VerticalAlignment="Center"/>
+            <Label Content=" ЭЛ. ПОЧТА" 
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   Margin="3 80 0 0"
+                   VerticalAlignment="Top"/>
+            <TextBox x:Name="TbLogin"
+                     Text="{Binding ElementName=LVinfo, Path=SelectedItem.Login , Mode=OneWay}"
+                     Grid.Column="1"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Width="250" Height="26"
+                     Foreground="#356696"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#356696"/>
+            <TextBox x:Name="TbPassword"
+                     Text="{Binding ElementName=LVinfo, Path=SelectedItem.Password , Mode=OneWay}"
+                     Grid.Column="1"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     Width="250" Height="26"
+                     Foreground="#356696"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#356696"/>
+            <TextBox x:Name="TbEmail"
+                     Text="{Binding ElementName=LVinfo, Path=SelectedItem.Email , Mode=OneWay}"
+                     Grid.Column="1"
+                     Margin="0 80 0 0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Width="250" Height="26"
+                     Foreground="#356696"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#356696"/>
+        </Grid>
+
+        <StackPanel Margin="10 390 0 0"
+                    Orientation="Horizontal">
+            <Button x:Name="BtnCreate"
+                    Click="BtnCreate_Click"
+                    HorizontalAlignment="Left"
+                    Margin="10 0 20 0"
+                    Foreground="#356696"
+                    Background="Transparent"
+                    BorderBrush="#356696">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Create"
+                                             
+                                             Margin="0 2 3 0"/>
+                    <TextBlock Text="Создать"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Margin="10 390 0 0"
+                    Orientation="Horizontal">
+            <Button x:Name="BtnRead"
+                    Click="BtnRead_Click"
+                    HorizontalAlignment="Left"
+                    Margin="140 0 20 0"
+                    Foreground="#356696"
+                    Background="Transparent"
+                    BorderBrush="#356696">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ReadMore"
+                                             Margin="0 2 3 0"/>
+                    <TextBlock Text="Прочитать"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Margin="10 390 0 0"
+                    Orientation="Horizontal">
+            <Button x:Name="BtnUpdate"
+                    Click="BtnUpdate_Click"
+                    HorizontalAlignment="Left"
+                    Margin="290 0 20 0"
+                    Foreground="#356696"
+                    Background="Transparent"
+                    BorderBrush="#356696">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Update"
+                                             Margin="0 2 3 0"/>
+                    <TextBlock Text="Обновить"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Margin="10 390 0 0"
+                    Orientation="Horizontal">
+            <Button x:Name="BtnDel"
+                    Click="BtnDel_Click"
+                    HorizontalAlignment="Left"
+                    Margin="440 0 20 0"
+                    Foreground="#356696"
+                    Background="Transparent"
+                    BorderBrush="#356696">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Trash"
+                                             Margin="0 2 3 0"/>
+                    <TextBlock Text="Удалить"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+
+
     </Grid>
 </Window>

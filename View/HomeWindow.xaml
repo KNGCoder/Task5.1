@@ -72,23 +72,39 @@
                         <Button x:Name="But"
                                 Click="But_Click"
                                 Height="40" Width="150" 
-                                Margin="74,250,74,50"
-                                Background="#9928353B" 
-                                BorderBrush="Transparent"
-                                >
-                            <TextBlock x:Name="Input2"
-                                       HorizontalAlignment="Left"       
-                                       Text="Войти"
-                                       Foreground="#88c2f7"   
-                                       FontSize="22" />
+                                HorizontalAlignment="Left"
+                                Margin="78,248,0,62"
+                                Foreground="#89b9e1"
+                                Background="Transparent"
+                                BorderBrush="#89b9e1">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Person"
+                                                         Height="20" Width="20"
+                                                         Margin="0 2 3 0"/>
+                                <TextBlock Text="Войти" 
+                                           FontSize="20"/>
+                            </StackPanel>
                         </Button>
+                        <TextBlock HorizontalAlignment="Center"
+                                   Margin="0 320 0 0">
+                            
+                            <Run> Или получить временный </Run>
+                            <Run Foreground="White"> ограниченый доступ 
+                                <Run.Style>
+                                    <Style TargetType="Run">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Run.Style>
+                            </Run>
+                        </TextBlock>
                     </Grid>
                 </Border>
-
-
             </Grid>
         </Border>
-
-
     </Grid>
 </Window>

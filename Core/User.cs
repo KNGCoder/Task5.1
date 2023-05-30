@@ -11,7 +11,7 @@ namespace Task5._1.Core
     public class User
     {
         [Key]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
